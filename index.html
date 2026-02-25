@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arina Moroz | Rust Server</title>
+
+<style>
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+
+
+header {
+    background: #111;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: orange;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+
+main {
+    padding: 30px;
+}
+
+
+
+section.banner {
+    background: linear-gradient(to right, #000, #ff6a00);
+    padding: 50px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+
+
+.content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+
+aside {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 250px;
+}
+
+.progress-bar {
+    background: #333;
+    height: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress {
+    height: 100%;
+    width: 45%;
+    background: orange;
+}
+
+button {
+    background: orange;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+
+
+section.shop {
+    flex: 3;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+article.card {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+article.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    margin-top: 10px;
+    color: orange;
+    font-weight: bold;
+}
+
+
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #111;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+
+
+@media(max-width: 768px){
+    .content {
+        flex-direction: column;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ARINA MOROZ</div>
+    <nav>
+        <a href="#">Магазин</a>
+        <a href="#">Правила</a>
+        <a href="#">Вайпы</a>
+        <a href="#">Баны</a>
+        <a href="#">Авторизация</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="banner">
+        <h1>Ежедневные розыгрыши</h1>
+        <p>Бонус при авторизации на сервере</p>
+    </section>
+
+    <div class="content">
+
+        <aside>
+            <h3>Arina Moroz x2</h3>
+            <p id="server-ip">IP скоро появится</p>
+            <button onclick="copyIP()">Скопировать IP</button>
+
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+
+            <p>1488 / 200 игроков</p>
+        </aside>
+
+        <section class="shop">
+            <h2>Магазин</h2>
+
+            <div class="shop-grid">
+
+                <article class="card">
+                    <img src="https://via.placeholder.com/200x150" alt="">
+                    <h3>НИКИТА НИЧИПОРЕНКО</h3>
+                    <p class="price">80,чего ,хуев ,слонов?</p>
+                </article>
+
+                <article class="card">
+                    <img src="https://via.placeholder.com/200x150" alt="">
+                    <h3>АРИНКА МОРОЗ</h3>
+                    <p class="price">100,чего ,хуев ,слонов?</p>
+                </article>
+
+                <article class="card">
+                    <img src="https://via.placeholder.com/200x150" alt="">
+                    <h3>СКИП ОЧЕРЕДИ К МАМЕ МИТИ</h3>
+                    <p class="price">50,чего ,хуев ,слонов?</p>
+                </article>
+
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+<footer>
+© 2026 Arina Moroz | Rust x2 Modded
+</footer>
+
+<script>
+function copyIP() {
+    const ip = document.getElementById("server-ip").innerText;
+    navigator.clipboard.writeText(ip);
+    alert("IP скопирован!");
+}
+</script>
+
+</body>
+</html>
