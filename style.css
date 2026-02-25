@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000, #1a1a1a, #ff6a00);
+    background-size: 400% 400%;
+    animation: gradient 12s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #111;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.7);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.layout {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+aside {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background: #141414;
+    padding: 20px;
+    border-radius: 15px;
+
+    position: relative;
+}
+
+aside::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #ff6a00, transparent);
+    box-shadow: 0 0 10px #ff6a00;
+}
+
+.shop {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.top-banner {
+    background: linear-gradient(to right, #000, #ff6a00);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255,106,0,0.3);
+}
+
+.server-block {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255,106,0,0.15);
+}
+
+button {
+    background: linear-gradient(45deg, #ff6a00, orange);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(255,106,0,0.5);
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255,106,0,0.9);
+}
+
+.progress-bar {
+    background: #333;
+    height: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress {
+    height: 100%;
+    width: 45%;
+    background: linear-gradient(90deg, orange, #ff6a00);
+    box-shadow: 0 0 10px orange;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px rgba(255,106,0,0.4);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.price {
+    color: orange;
+    font-weight: bold;
+    text-shadow: 0 0 5px orange;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    opacity: 0.6;
+}
+
+@media(max-width: 768px){
+    .layout {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    aside::after {
+        display: none;
+    }
+}
